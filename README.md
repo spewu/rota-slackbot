@@ -106,6 +106,14 @@ If using Heroku, input your production environment variables in your Heroku app 
 
 Whatever deployment option you choose, once you have a public domain for your Slack app with SSL, go into your production Slack app settings and update the **Event Subscriptions** Request URL to `https://your-public-url/slack/events`.
 
+## Docker
+
+The app has been published to Docker hub under `sohape/rota`, so you can also run it like this:
+
+```
+docker run -d -p 3000:3000 -e PORT=3000 -e SLACK_BOT_TOKEN=<your-token> -e SLACK_SIGNING_SECRET=<your-signing-secret> -e SLACK_TEAM=<your-team> -e MONGO_URI="<your-mongodb-connection-string>" sohape/rota
+```
+
 ---
 
 [MIT License](LICENSE)
