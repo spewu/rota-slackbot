@@ -3,6 +3,7 @@ const { App } = require('@slack/bolt');
 // MongoDB
 const mongoose = require('mongoose');
 const store = require('./data/db');
+const healthcheck = require('healthcheck-middleware');
 
 /*------------------
        ON INIT
@@ -38,6 +39,8 @@ require('./app-home-opened')(app);
     APP MENTIONS
 ------------------*/
 require('./app-mentions')(app, store);
+
+app.receiver.app.use('/', healthcheck());
 
 /*------------------
      START APP

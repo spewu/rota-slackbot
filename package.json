@@ -9,6 +9,7 @@
   "dependencies": {
     "@slack/bolt": "^2.0.1",
     "dotenv": "^8.2.0",
+    "healthcheck-middleware": "1.0.1",
     "mongoose": "^5.9.12"
   },
   "engines": {
